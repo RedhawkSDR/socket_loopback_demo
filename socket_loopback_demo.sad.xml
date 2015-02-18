@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE softwareassembly PUBLIC "-//JTRS//DTD SCA V2.2.2 SAD//EN" "softwareassembly.dtd">
+<softwareassembly id="DCE:88163c1b-7d1d-43a6-abea-4dc8b6931935" name="socket_loopback_demo">
+  <componentfiles>
+    <componentfile id="SigGen_64d0a3a5-633c-4875-b33d-223ebf7e261f" type="SPD">
+      <localfile name="/components/SigGen/SigGen.spd.xml"/>
+    </componentfile>
+    <componentfile id="sinksocket_936454bb-d05d-479a-a9b3-ab03d9c7fe5a" type="SPD">
+      <localfile name="/components/sinksocket/sinksocket.spd.xml"/>
+    </componentfile>
+    <componentfile id="sourcesocket_5b892418-08c8-438c-a2db-912c0d4079c9" type="SPD">
+      <localfile name="/components/sourcesocket/sourcesocket.spd.xml"/>
+    </componentfile>
+  </componentfiles>
+  <partitioning>
+    <componentplacement>
+      <componentfileref refid="SigGen_64d0a3a5-633c-4875-b33d-223ebf7e261f"/>
+      <componentinstantiation id="SigGen_1" startorder="0">
+        <usagename>SigGen_1</usagename>
+        <componentproperties>
+          <simpleref refid="sample_rate" value="50000.0"/>
+          <simpleref refid="xfer_len" value="50000"/>
+        </componentproperties>
+        <findcomponent>
+          <namingservice name="SigGen_1"/>
+        </findcomponent>
+      </componentinstantiation>
+    </componentplacement>
+    <componentplacement>
+      <componentfileref refid="sinksocket_936454bb-d05d-479a-a9b3-ab03d9c7fe5a"/>
+      <componentinstantiation id="sinksocket_1" startorder="1">
+        <usagename>sinksocket_1</usagename>
+        <componentproperties>
+          <simpleref refid="port" value="12344"/>
+          <simpleref refid="ip_address" value=""/>
+        </componentproperties>
+        <findcomponent>
+          <namingservice name="sinksocket_1"/>
+        </findcomponent>
+      </componentinstantiation>
+    </componentplacement>
+    <componentplacement>
+      <componentfileref refid="sourcesocket_5b892418-08c8-438c-a2db-912c0d4079c9"/>
+      <componentinstantiation id="sourcesocket_1" startorder="2">
+        <usagename>sourcesocket_1</usagename>
+        <componentproperties>
+          <simpleref refid="port" value="12344"/>
+          <simpleref refid="max_bytes" value="100000"/>
+          <simpleref refid="ip_address" value="127.0.0.1"/>
+          <simpleref refid="min_bytes" value="100000"/>
+          <simpleref refid="connection_type" value="client"/>
+        </componentproperties>
+        <findcomponent>
+          <namingservice name="sourcesocket_1"/>
+        </findcomponent>
+      </componentinstantiation>
+    </componentplacement>
+  </partitioning>
+  <assemblycontroller>
+    <componentinstantiationref refid="SigGen_1"/>
+  </assemblycontroller>
+  <connections>
+    <connectinterface id="connection_1">
+      <usesport>
+        <usesidentifier>dataFloat_out</usesidentifier>
+        <componentinstantiationref refid="SigGen_1"/>
+      </usesport>
+      <providesport>
+        <providesidentifier>dataFloat_in</providesidentifier>
+        <componentinstantiationref refid="sinksocket_1"/>
+      </providesport>
+    </connectinterface>
+  </connections>
+</softwareassembly>
