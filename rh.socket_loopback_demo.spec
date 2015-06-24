@@ -7,17 +7,17 @@
 %define _prefix %{_sdrroot}
 Prefix: %{_prefix}
 
-Name: socket_loopback_demo
-Summary: Waveform socket_loopback_demo
+Name: rh.socket_loopback_demo
+Summary: Waveform rh.socket_loopback_demo
 Version: 1.0.0
 Release: 1
 License: None
 Group: REDHAWK/Waveforms
 Source: %{name}-%{version}.tar.gz
 # Require the controller whose SPD is referenced
-Requires: SigGen
+Requires: rh.SigGen
 # Require each referenced component
-Requires: SigGen sinksocket sourcesocket
+Requires: rh.SigGen rh.sinksocket rh.sourcesocket
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}
 

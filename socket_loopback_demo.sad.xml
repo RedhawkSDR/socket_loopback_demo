@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE softwareassembly PUBLIC "-//JTRS//DTD SCA V2.2.2 SAD//EN" "softwareassembly.dtd">
-<softwareassembly id="DCE:88163c1b-7d1d-43a6-abea-4dc8b6931935" name="socket_loopback_demo">
+<softwareassembly id="DCE:ce4e7646-1a25-11e5-a972-3417ebc4aab5" name="rh.socket_loopback_demo">
   <componentfiles>
     <componentfile id="SigGen_64d0a3a5-633c-4875-b33d-223ebf7e261f" type="SPD">
-      <localfile name="/components/SigGen/SigGen.spd.xml"/>
+      <localfile name="/components/rh/SigGen/SigGen.spd.xml"/>
     </componentfile>
     <componentfile id="sinksocket_936454bb-d05d-479a-a9b3-ab03d9c7fe5a" type="SPD">
-      <localfile name="/components/sinksocket/sinksocket.spd.xml"/>
+      <localfile name="/components/rh/sinksocket/sinksocket.spd.xml"/>
     </componentfile>
     <componentfile id="sourcesocket_5b892418-08c8-438c-a2db-912c0d4079c9" type="SPD">
-      <localfile name="/components/sourcesocket/sourcesocket.spd.xml"/>
+      <localfile name="/components/rh/sourcesocket/sourcesocket.spd.xml"/>
     </componentfile>
   </componentfiles>
   <partitioning>
