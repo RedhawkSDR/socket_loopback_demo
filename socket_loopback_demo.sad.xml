@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE softwareassembly PUBLIC "-//JTRS//DTD SCA V2.2.2 SAD//EN" "softwareassembly.dtd">
 <softwareassembly id="DCE:ce4e7646-1a25-11e5-a972-3417ebc4aab5" name="rh.socket_loopback_demo">
   <componentfiles>
@@ -31,8 +31,15 @@
       <componentinstantiation id="sinksocket_1" startorder="1">
         <usagename>sinksocket_1</usagename>
         <componentproperties>
-          <simpleref refid="port" value="12344"/>
-          <simpleref refid="ip_address" value=""/>
+          <structsequenceref refid="Connections">
+            <structvalue>
+              <simplesequenceref refid="Connection::ports">
+                <values>
+                  <value>12344</value>
+                </values>
+              </simplesequenceref>
+            </structvalue>
+          </structsequenceref>
         </componentproperties>
         <findcomponent>
           <namingservice name="sinksocket_1"/>
