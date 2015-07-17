@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE softwareassembly PUBLIC "-//JTRS//DTD SCA V2.2.2 SAD//EN" "softwareassembly.dtd">
-<softwareassembly id="DCE:ce4e7646-1a25-11e5-a972-3417ebc4aab5" name="rh.socket_loopback_demo">
+<softwareassembly id="DCE:ce4e7646-1a25-11e5-a972-3417ebc4aab5" name="rh.socket_loopback_demo" version="1.0.0">
   <componentfiles>
     <componentfile id="SigGen_64d0a3a5-633c-4875-b33d-223ebf7e261f" type="SPD">
       <localfile name="/components/rh/SigGen/SigGen.spd.xml"/>
