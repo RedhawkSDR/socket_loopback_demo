@@ -23,4 +23,4 @@ This work is protected by Copyright. Please refer to the [Copyright File](COPYRI
 
 ## License
 
-REDHAWK FM Mono Demo Waveform is licensed under the GNU Lesser General Public License (LGPL).
+REDHAWK Socket Loopback Demo Waveform is licensed under the GNU Lesser General Public License (LGPL).
