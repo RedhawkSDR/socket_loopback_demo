@@ -52,6 +52,13 @@ with this program.  If not, see http://www.gnu.org/licenses/.
         <componentproperties>
           <structsequenceref refid="Connections">
             <structvalue>
+              <simpleref refid="Connection::connection_type" value="server"/>
+              <simpleref refid="Connection::ip_address" value=""/>
+              <simplesequenceref refid="Connection::byte_swap">
+                <values>
+                  <value>0</value>
+                </values>
+              </simplesequenceref>
               <simplesequenceref refid="Connection::ports">
                 <values>
                   <value>12344</value>
@@ -97,4 +104,13 @@ with this program.  If not, see http://www.gnu.org/licenses/.
       </providesport>
     </connectinterface>
   </connections>
+  <externalproperties>
+    <property comprefid="sinksocket_1" propid="ConnectionStats" externalpropid="sinkConnectionStats"/>
+    <property comprefid="sourcesocket_1" propid="sri" externalpropid="source_sri"/>
+    <property comprefid="sourcesocket_1" propid="status" externalpropid="source_status"/>
+    <property comprefid="sourcesocket_1" propid="total_bytes" externalpropid="source_total_bytes"/>
+    <property comprefid="sourcesocket_1" propid="bytes_per_sec" externalpropid="source_bytes_per_sec"/>
+    <property comprefid="sinksocket_1" propid="bytes_per_sec" externalpropid="sink_bytes_per_sec"/>
+    <property comprefid="sinksocket_1" propid="total_bytes" externalpropid="sink_total_bytes"/>
+  </externalproperties>
 </softwareassembly>
